@@ -17,7 +17,7 @@ const ResponseDisplay = ({ response, loading, question }: ResponseDisplayProps) 
   const handleCopy = () => {
     navigator.clipboard.writeText(response);
     setCopied(true);
-    toast.success("Response copied to clipboard");
+    toast.success("Atsakymas nukopijuotas į iškarpinę!");
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -26,7 +26,7 @@ const ResponseDisplay = ({ response, loading, question }: ResponseDisplayProps) 
   return (
     <Card className="w-full overflow-hidden animate-fade-in">
       <CardHeader className="pb-0 flex flex-row items-center justify-between">
-        <CardTitle className="text-lg font-medium">Response</CardTitle>
+        <CardTitle className="text-lg font-medium">Atsakymas</CardTitle>
         {response && (
           <Button
             variant="outline"
@@ -39,7 +39,7 @@ const ResponseDisplay = ({ response, loading, question }: ResponseDisplayProps) 
             ) : (
               <Copy className="h-3.5 w-3.5 mr-1" />
             )}
-            {copied ? "Copied" : "Copy"}
+            {copied ? "Nukopijuota" : "Kopijuoti"}
           </Button>
         )}
       </CardHeader>
@@ -47,7 +47,7 @@ const ResponseDisplay = ({ response, loading, question }: ResponseDisplayProps) 
         {/* Display the question above the response */}
         {question && (
           <div className="mb-4 p-3 bg-gray-50 rounded-md border border-gray-200">
-            <p className="text-sm font-medium text-gray-500 mb-1">Question:</p>
+            <p className="text-sm font-medium text-gray-500 mb-1">Klausimas:</p>
             <p className="text-gray-800">{question}</p>
           </div>
         )}

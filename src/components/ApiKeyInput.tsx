@@ -20,7 +20,7 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
 
   const handleSaveApiKey = () => {
     if (!tempApiKey.trim()) {
-      toast.error("Please enter a valid API key");
+      toast.error("Įveskite galiojantį API raktą");
       return;
     }
     
@@ -28,7 +28,7 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
     localStorage.setItem("geminiApiKey", tempApiKey);
     setApiKey(tempApiKey);
     setIsApiKeySet(true);
-    toast.success("API key saved successfully");
+    toast.success("API raktas sėkmingai išsaugotas!");
   };
 
   const handleClearApiKey = () => {
@@ -36,7 +36,7 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
     setApiKey("");
     setTempApiKey("");
     setIsApiKeySet(false);
-    toast.success("API key removed");
+    toast.success("API raktas pašalintas!");
   };
 
   return (
@@ -44,20 +44,20 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Key className="h-5 w-5 text-primary" />
-          Google AI Studio API Key
+          Google AI Studio API raktas
         </CardTitle>
         <CardDescription>
-          Enter your Google AI Studio API key to start using Gemini
+          Įveskite savo Google AI Studio API raktą, kad pradėtumėte naudotis!
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="api-key">API Key</Label>
+          <Label htmlFor="api-key">API Raktas</Label>
           <div className="relative">
             <Input
               id="api-key"
               type={showApiKey ? "text" : "password"}
-              placeholder="Enter your Gemini API key"
+              placeholder="Įvesk savo Gemini API raktą"
               value={tempApiKey}
               onChange={(e) => setTempApiKey(e.target.value)}
               className="pr-10 focus-premium"
@@ -77,11 +77,11 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
         </div>
         <div className="flex gap-2">
           <Button onClick={handleSaveApiKey} className="flex-1">
-            Save Key
+            Išsaugoti raktą
           </Button>
           {isApiKeySet && (
             <Button variant="outline" onClick={handleClearApiKey}>
-              Clear
+              Išvalyti
             </Button>
           )}
         </div>

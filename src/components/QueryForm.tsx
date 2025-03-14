@@ -38,10 +38,10 @@ const QueryForm = ({ onSubmit, isLoading }: QueryFormProps) => {
       <CardContent className="pt-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="query">Ask Gemini a question</Label>
+            <Label htmlFor="query">Koks būtų jūsų klausimas?</Label>
             <Textarea
               id="query"
-              placeholder="Type your question here..."
+              placeholder="Įvesk savo klausimą čia..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -55,7 +55,7 @@ const QueryForm = ({ onSubmit, isLoading }: QueryFormProps) => {
             className="w-full flex items-center justify-center gap-2"
           >
             <SendHorizontal className="h-4 w-4" />
-            {isLoading ? "Processing..." : "Submit"}
+            {isLoading ? "Klausiama..." : "Užklausk"}
           </Button>
         </form>
       </CardContent>

@@ -49,12 +49,12 @@ const Index = () => {
       <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "0ms" }}>Google</span>{" "}
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "150ms" }}>AI</span>{" "}
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "300ms" }}>Studio</span>
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "0ms" }}>NFQ</span>{" "}
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "150ms" }}>Tech-park</span>{" "}
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "300ms" }}>Iššūkis</span>
           </h1>
           <p className="mt-4 text-lg text-gray-600 opacity-0 animate-fade-in" style={{ animationDelay: "450ms", animationFillMode: "forwards" }}>
-            A simple, elegant interface for interacting with Google's Gemini Models
+            Virtualus asistentas, informuojantis apie vietos verslų paslaugas
           </p>
         </div>
 
@@ -81,7 +81,7 @@ const Index = () => {
                     onClick={() => setIsApiKeySet(false)} 
                     className="text-sm text-primary hover:underline"
                   >
-                    Change Key
+                    Pakeisti raktą
                   </button>
                 </div>
               </div>

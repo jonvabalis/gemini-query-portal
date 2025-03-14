@@ -23,7 +23,7 @@ const Index = () => {
 
   const handleSubmitQuery = async (query: string) => {
     if (!isApiKeySet) {
-      toast.error("Please set your Gemini API key first");
+      toast.error("Please set your Google AI Studio API key first");
       return;
     }
 
@@ -46,12 +46,12 @@ const Index = () => {
       <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "0ms" }}>Gemini</span>{" "}
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "150ms" }}>Query</span>{" "}
-            <span className="inline-block animate-slide-up" style={{ animationDelay: "300ms" }}>Portal</span>
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "0ms" }}>Google</span>{" "}
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "150ms" }}>AI</span>{" "}
+            <span className="inline-block animate-slide-up" style={{ animationDelay: "300ms" }}>Studio</span>
           </h1>
           <p className="mt-4 text-lg text-gray-600 opacity-0 animate-fade-in" style={{ animationDelay: "450ms", animationFillMode: "forwards" }}>
-            A simple, elegant interface for interacting with Google's Gemini Pro
+            A simple, elegant interface for interacting with Google's Gemini Models
           </p>
         </div>
 

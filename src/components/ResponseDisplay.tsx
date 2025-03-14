@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui-custom/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui-custom/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 

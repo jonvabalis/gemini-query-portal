@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui-custom/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui-custom/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Eye, EyeOff, Key } from "lucide-react";
 
@@ -44,10 +44,10 @@ const ApiKeyInput = ({ apiKey, setApiKey, isApiKeySet, setIsApiKeySet }: ApiKeyI
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Key className="h-5 w-5 text-primary" />
-          Google Gemini API Key
+          Google AI Studio API Key
         </CardTitle>
         <CardDescription>
-          Enter your Google Gemini API key to start using the service
+          Enter your Google AI Studio API key to start using Gemini
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">

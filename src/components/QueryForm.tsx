@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { Button } from "@/components/ui-custom/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -18,6 +18,18 @@ const QueryForm = ({ onSubmit, isLoading }: QueryFormProps) => {
     e.preventDefault();
     if (query.trim()) {
       onSubmit(query);
+      setQuery(""); // Clear the query after submission
+    }
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    // Submit on Enter press (without Shift key)
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (query.trim() && !isLoading) {
+        onSubmit(query);
+        setQuery(""); // Clear the query after submission
+      }
     }
   };
 
@@ -32,6 +44,7 @@ const QueryForm = ({ onSubmit, isLoading }: QueryFormProps) => {
               placeholder="Type your question here..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
               className="min-h-[120px] resize-none focus-premium"
               disabled={isLoading}
             />

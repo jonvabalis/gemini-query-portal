@@ -8,9 +8,10 @@ import { toast } from "sonner";
 interface ResponseDisplayProps {
   response: string;
   loading: boolean;
+  question: string; // Add the question prop
 }
 
-const ResponseDisplay = ({ response, loading }: ResponseDisplayProps) => {
+const ResponseDisplay = ({ response, loading, question }: ResponseDisplayProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -43,6 +44,14 @@ const ResponseDisplay = ({ response, loading }: ResponseDisplayProps) => {
         )}
       </CardHeader>
       <CardContent className="pt-4">
+        {/* Display the question above the response */}
+        {question && (
+          <div className="mb-4 p-3 bg-gray-50 rounded-md border border-gray-200">
+            <p className="text-sm font-medium text-gray-500 mb-1">Question:</p>
+            <p className="text-gray-800">{question}</p>
+          </div>
+        )}
+        
         {loading ? (
           <div className="flex flex-col gap-2">
             <div className="h-4 w-full bg-gray-200 rounded animate-pulse"></div>

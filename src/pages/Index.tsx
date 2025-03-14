@@ -11,6 +11,7 @@ const Index = () => {
   const [isApiKeySet, setIsApiKeySet] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [response, setResponse] = useState("");
+  const [currentQuestion, setCurrentQuestion] = useState(""); // Add state for current question
 
   useEffect(() => {
     // Check if API key is saved in local storage
@@ -29,6 +30,7 @@ const Index = () => {
 
     setIsLoading(true);
     setResponse("");
+    setCurrentQuestion(query); // Save the current question
 
     try {
       const result = await generateResponse(apiKey, query);
@@ -83,7 +85,11 @@ const Index = () => {
                 </div>
               </div>
               
-              <ResponseDisplay response={response} loading={isLoading} />
+              <ResponseDisplay 
+                response={response} 
+                loading={isLoading} 
+                question={currentQuestion} // Pass the current question
+              />
             </div>
           )}
         </div>

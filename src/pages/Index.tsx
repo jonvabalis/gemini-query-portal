@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ApiKeyInput from "@/components/ApiKeyInput";
 import QueryForm from "@/components/QueryForm";
 import ResponseDisplay from "@/components/ResponseDisplay";
+import MapSection from "@/components/MapSection";
 import { generateResponse } from "@/services/geminiService";
 import { toast } from "sonner";
 
@@ -68,7 +69,7 @@ const Index = () => {
           )}
           
           {isApiKeySet && (
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+            <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 lg:gap-8">
               <div className="space-y-6">
                 <QueryForm onSubmit={handleSubmitQuery} isLoading={isLoading} />
                 
@@ -88,10 +89,15 @@ const Index = () => {
               <ResponseDisplay 
                 response={response} 
                 loading={isLoading} 
-                question={currentQuestion} // Pass the current question
+                question={currentQuestion}
               />
             </div>
           )}
+          
+          {/* Map Section */}
+          <div className="mt-12">
+            <MapSection />
+          </div>
         </div>
       </div>
     </div>
